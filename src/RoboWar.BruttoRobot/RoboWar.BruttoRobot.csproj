@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+   <EmbeddedResource Include="Robot.png"></EmbeddedResource>
+    <PackageReference Include="RoboWar.Robot" Version="1.0.0" />
+  </ItemGroup>
+</Project>
