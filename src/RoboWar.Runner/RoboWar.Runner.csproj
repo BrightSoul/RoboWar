@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\RoboWar.Model\RoboWar.Model.csproj" />
+    <ProjectReference Include="..\RoboWar.BruttoRobot\RoboWar.BruttoRobot.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="RoboWar.Robot" Version="1.0.0" />
+  </ItemGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+</Project>
