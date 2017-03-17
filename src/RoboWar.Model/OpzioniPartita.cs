@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RoboWar.Model
 {
-    public class OpzioniPartita
+    public class OpzioniPartita : IOpzioniPartita
     {
         public TimeSpan TimeoutDenominazione { get; set; } = TimeSpan.FromMilliseconds(100);
         public TimeSpan TimeoutDecisione { get; set; } = TimeSpan.FromMilliseconds(2000);
@@ -17,8 +17,9 @@ namespace RoboWar.Model
         public int PuntiPerTurno { get; set; } = 1;
         public int PuntiPerVittoriaRound { get; set; } = 2;
         public int PuntiVita { get; set; } = 1000;
-        public int DistanzaMinimaTraRobot { get; set; } = 50;
-        public int LatoCampoDiBattaglia { get; set; } = 1000;
+        public int DistanzaMinimaTraRobot { get; set; } = 100;
+        public int LarghezzaPianoDiGioco { get; set; } = 1000;
+        public int AltezzaPianoDiGioco { get; set; } = 1000;
 
         internal void Convalida()
         {

@@ -39,6 +39,14 @@ namespace RoboWar.Model
             get;
         }
 
+        public IOpzioniPartita Opzioni
+        {
+            get
+            {
+                return opzioni;
+            }
+        }
+
         public List<Azione> RegistroAzioni { get;}
 
         public int RoundCorrente
@@ -67,14 +75,16 @@ namespace RoboWar.Model
             }
         }
 
-        public void AggiungiPartecipante(IRobot robot)
+        public SituazionePartita AggiungiPartecipante(IRobot robot)
         {
             if (statoPartita != StatiPartita.PartitaDaIniziare)
                 throw new InvalidOperationException("Si possono aggiungere partecipanti solo prima dell'inizio della partita");
 
             var posizione = GeneraPosizioneCasuale(robotPartecipanti.Values.Select(p => p.Posizione));
             var denominazione = robot.DenominazioneConTimeout(opzioni.TimeoutDenominazione);
-            robotPartecipanti.Add(robot, new SituazionePartita(denominazione, posizione));
+            var situazionePartita = new SituazionePartita(denominazione, posizione);
+            robotPartecipanti.Add(robot, situazionePartita);
+            return situazionePartita;
         }
 
         public IEnumerable<Azione> Gioca()
@@ -95,7 +105,7 @@ namespace RoboWar.Model
             Tuple<Posizione, double> migliorePosizione = null;
             do
             {
-                var posizione = new Posizione(random.Next(0, 100), random.Next(0, 100));
+                var posizione = new Posizione(random.Next(0, opzioni.LarghezzaPianoDiGioco), random.Next(0, opzioni.AltezzaPianoDiGioco));
                 if (posizioniEsistenti.Any())
                 {
                     distanzaMinima = posizioniEsistenti.Min(p => CalcolaDistanzaTraDuePosizioni(p, posizione));

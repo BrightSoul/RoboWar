@@ -1,0 +1,33 @@
+﻿<Window x:Class="RoboWar.Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoboWar.Desktop"
+        xmlns:viewModels="clr-namespace:RoboWar.Desktop.ViewModels"
+        xmlns:views="clr-namespace:RoboWar.Desktop.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <viewModels:MainWindow />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Viewbox Stretch="Uniform" Grid.RowSpan="2" Grid.Column="0">
+            <views:PianoDiGioco Margin="100" />
+        </Viewbox>
+        <ScrollViewer Background="#eee" Name="Scroller" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch">
+            <ItemsControl ItemsSource="{Binding Log}">
+            </ItemsControl>
+        </ScrollViewer>
+        
+        <Button Grid.Column="1" Command="{Binding ComandoAvviaPartita}" Background="Green" Foreground="White">Avvia partita</Button>
+    </Grid>
+</Window>
