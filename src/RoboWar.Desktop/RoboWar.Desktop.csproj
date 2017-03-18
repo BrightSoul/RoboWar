@@ -38,6 +38,9 @@
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="RoboWar.Robot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\RoboWar.Robot.1.0.0\lib\netstandard1.4\RoboWar.Robot.dll</HintPath>
     </Reference>
@@ -115,11 +118,20 @@
     <Compile Include="Models\ICanvasView.cs" />
     <Compile Include="ViewModels\MainWindow.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="Views\Indicatore.xaml.cs">
+      <DependentUpon>Indicatore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PianoDiGioco.xaml.cs">
       <DependentUpon>PianoDiGioco.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Robot.xaml.cs">
       <DependentUpon>Robot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Round.xaml.cs">
+      <DependentUpon>Round.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Turno.xaml.cs">
+      <DependentUpon>Turno.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -133,11 +145,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Indicatore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PianoDiGioco.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Robot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Round.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Turno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -10,5 +10,6 @@ namespace RoboWar.Desktop.Models
     {
         double Left { get; }
         double Top { get; }
+        TimeSpan Delay { get; }
     }
 }

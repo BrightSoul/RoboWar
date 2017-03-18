@@ -1,5 +1,4 @@
 ﻿using RoboWar.Desktop.Models;
-using RoboWar.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,19 +17,19 @@ using System.Windows.Shapes;
 namespace RoboWar.Desktop.Views
 {
     /// <summary>
-    /// Logica di interazione per Robot.xaml
+    /// Logica di interazione per Turno.xaml
     /// </summary>
-    public partial class Robot : UserControl, ICanvasView
+    public partial class Turno : UserControl, ICanvasView
     {
-        public Robot()
+        public Turno()
         {
             InitializeComponent();
         }
 
-        public double Left => ((SituazionePartita) DataContext).Posizione.X;
+        public double Left => 0.5;
 
-        public double Top => ((SituazionePartita) DataContext).Posizione.Y;
+        public double Top => 0;
 
-        public TimeSpan Delay => TimeSpan.Zero;
+        public TimeSpan Delay => TimeSpan.FromSeconds(1);
     }
 }
